@@ -1,0 +1,261 @@
+/* ============================================================
+   Estilos - Restaurante La Esquina (Clase 03)
+   Layout con Flexbox + diseño responsive
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f6f5f3;
+    color: #2d3436;
+}
+
+/* --- Encabezado --- */
+.encabezado {
+    background-color: #4e342e;
+    color: #ffffff;
+    text-align: center;
+    padding: 24px 16px;
+}
+
+.encabezado p {
+    opacity: 0.85;
+}
+
+/* --- Navegación --- */
+.navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    background-color: #3e2723;
+    padding: 12px;
+}
+
+.navegacion a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navegacion a:hover {
+    text-decoration: underline;
+}
+
+/* --- Contenido principal --- */
+.principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.seccion {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 400px;
+}
+
+.seccion h2 {
+    color: #4e342e;
+}
+
+/* --- Formulario --- */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.formulario label {
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.formulario input,
+.formulario select {
+    padding: 10px;
+    border: 1px solid #d7ccc8;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.formulario button {
+    margin-top: 16px;
+    padding: 12px;
+    background-color: #4e342e;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #3e2723;
+}
+
+/* --- Mensajes de éxito / error --- */
+.mensaje {
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.mensaje.ok {
+    color: #2e7d32;
+}
+
+.mensaje.error {
+    color: #c62828;
+}
+
+/* --- Barra del listado con filtros --- */
+.barra-listado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.filtros {
+    display: flex;
+    gap: 8px;
+}
+
+.filtros button {
+    padding: 6px 14px;
+    border: 1px solid #4e342e;
+    background-color: #ffffff;
+    color: #4e342e;
+    border-radius: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filtros button.activo {
+    background-color: #4e342e;
+    color: #ffffff;
+}
+
+/* --- Tarjetas del listado --- */
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.tarjeta {
+    border: 1px solid #d7ccc8;
+    border-left: 6px solid #4e342e;
+    border-radius: 8px;
+    padding: 14px;
+    flex: 1 1 260px;
+    background-color: #fffdfb;
+}
+
+.tarjeta h3 {
+    color: #3e2723;
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+}
+
+.tarjeta p {
+    margin: 3px 0;
+    font-size: 0.95rem;
+}
+
+/* Chips de estado del pedido */
+.chip {
+    display: inline-block;
+    margin: 8px 0;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.chip.pendiente {
+    background-color: #ffe0b2;
+    color: #e65100;
+}
+
+.chip.preparacion {
+    background-color: #bbdefb;
+    color: #0d47a1;
+}
+
+.chip.entregado {
+    background-color: #c8e6c9;
+    color: #1b5e20;
+}
+
+/* --- Controles de acción dentro de la tarjeta --- */
+.acciones {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.acciones input {
+    width: 64px;
+    padding: 6px;
+    border: 1px solid #d7ccc8;
+    border-radius: 6px;
+}
+
+.acciones button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.acciones .avanzar {
+    background-color: #bbdefb;
+    color: #0d47a1;
+}
+
+.acciones .guardar {
+    background-color: #d7ccc8;
+    color: #3e2723;
+}
+
+.acciones .cancelar {
+    background-color: #ffcdd2;
+    color: #b71c1c;
+}
+
+.sin-resultados {
+    color: #777;
+}
+
+/* --- Pie de página --- */
+.pie {
+    text-align: center;
+    padding: 16px;
+    background-color: #3e2723;
+    color: #ffffff;
+    margin-top: 24px;
+}
+
+/* --- Responsive: en pantallas chicas, una sola columna --- */
+@media (max-width: 700px) {
+    .principal {
+        flex-direction: column;
+    }
+}
